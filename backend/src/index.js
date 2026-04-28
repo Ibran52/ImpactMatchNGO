@@ -26,6 +26,9 @@ app.use('/api/matches', require('./routes/match.routes'));
 app.use('/api/notifications', require('./routes/notification.routes'));
 app.use('/api/admin', require('./routes/admin.routes'));
 
+// Health Check for Render/Monitoring
+app.get('/', (req, res) => res.json({ status: 'healthy', message: 'ImpactMatch API is active' }));
+
 // Error Handling
 const { errorHandler } = require('./middleware/error.middleware');
 
