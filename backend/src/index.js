@@ -34,15 +34,13 @@ app.use(errorHandler);
 const { runAutoAssignment } = require('./services/matching.service');
 
 const PORT = process.env.PORT || 5000;
-if (process.env.NODE_ENV !== 'production') {
-  app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-    
-    // Start the Matching Engine cycle every 5 minutes
-    setInterval(runAutoAssignment, 5 * 60 * 1000);
-    // Run once on startup
-    runAutoAssignment();
-  });
-}
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+  
+  // Start the Matching Engine cycle every 5 minutes
+  setInterval(runAutoAssignment, 5 * 60 * 1000);
+  // Run once on startup
+  runAutoAssignment();
+});
 
 module.exports = app;

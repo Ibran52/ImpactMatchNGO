@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: impactmatch-backend
+    env: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        fromConfig: true
+      - key: JWT_SECRET
+        fromConfig: true
+      - key: FIREBASE_PROJECT_ID
+        fromConfig: true
+      - key: GEMINI_API_KEY
+        fromConfig: true
+      - key: REDIS_URL
+        fromConfig: true
