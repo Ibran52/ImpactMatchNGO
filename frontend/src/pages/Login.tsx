@@ -22,7 +22,9 @@ const Login = () => {
       toast.success('Access granted. Welcome back.');
       navigate(`/${res.data.role}`);
     } catch (error: any) {
-      toast.error(error.response?.data?.message || 'Login failed. Please check credentials.');
+      console.error('Login Error:', error);
+      const message = error.response?.data?.message || error.message || 'Login failed. Please check your credentials.';
+      toast.error(message);
     } finally {
       setLoading(false);
     }

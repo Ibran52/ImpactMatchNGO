@@ -68,7 +68,9 @@ const Register = () => {
       toast.success('Registration successful. Welcome to the network.');
       navigate(`/${res.data.role}`);
     } catch (error: any) {
-      toast.error(error.response?.data?.message || 'Registration failed. Please try again.');
+      console.error('Registration Error:', error);
+      const message = error.response?.data?.message || error.message || 'Registration failed. Please try again.';
+      toast.error(message);
     } finally {
       setLoading(false);
     }

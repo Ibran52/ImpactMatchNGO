@@ -10,7 +10,7 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:5174', 'https://impactmatch-ngo.vercel.app'],
+  origin: '*',
   credentials: true
 }));
 app.use(helmet());
