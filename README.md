@@ -2,6 +2,10 @@
 
 Impact Match connects people who want to help with verified nonprofits that need volunteers or donations. The initial MVP includes account roles, NGO verification, searchable opportunities, volunteer sign-ups, Razorpay test-mode donations, and a personal impact summary.
 
+## App preview
+
+![Impact Match NGO homepage](docs/images/impact-match-home.png)
+
 ## Stack
 
 - **Client:** React, TypeScript, Vite, Tailwind CSS, accessible shadcn/ui-style components, Lucide, Framer Motion, React Router, TanStack Query, React Hook Form, and Zod.
